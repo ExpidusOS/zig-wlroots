@@ -344,6 +344,9 @@ pub const Output = extern struct {
     extern fn wlr_output_transform_compose(tr_a: wl.Output.Transform, tr_b: wl.Output.Transform) wl.Output.Transform;
     pub const transformCompose = wlr_output_transform_compose;
 
+    extern fn wlr_output_get_primary_formats(output: *Output, buffer_caps: u32) ?*const wlr.DrmFormatSet;
+    pub const getPrimaryFormats = wlr_output_get_primary_formats;
+
     extern fn wlr_output_is_headless(outupt: *Output) bool;
     pub const isHeadless = wlr_output_is_headless;
 
